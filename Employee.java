@@ -1,7 +1,6 @@
 //Jeffrey Edwards
 //constructor class
 //the purpose of this object is to create employee profiles using given information
-import org.w3c.dom.ls.LSOutput;
 
 import java.time.LocalDate;
 import java.util.*;
@@ -16,8 +15,8 @@ public class Employee {
     private String Lname;
     private String Gender;
     private final String Username;
-    private String JobTitle   = "";
-    private String BloodType = "";
+    private String JobTitle;
+    private String BloodType;
     private boolean Active_Employee = true;
     private LocalDate Birthday;
 
@@ -27,7 +26,7 @@ public class Employee {
     //constructor class to take employee first, last name and gender
     public Employee()
     {
-        String jobposition = "";
+        String jobposition;
 
         //asks employees name
         System.out.println("Please enter employee first name: ");
@@ -255,8 +254,7 @@ public class Employee {
               byear = 0;
           }
       }while (byear == 0);
-      LocalDate birthday = LocalDate.of(byear, bmonth2, bday);
-        Birthday = birthday;
+        Birthday = LocalDate.of(byear, bmonth2, bday);
     }
 
     //method for returning birthday value
