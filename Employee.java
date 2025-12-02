@@ -202,7 +202,7 @@ public class Employee {
     {
         Scanner bmonth = new Scanner(System.in);
         int bmonth2 = 0;
-        int bday;
+        int bday = 0;
         int byear;
 
       //while statement to enter age above 18
@@ -240,8 +240,30 @@ public class Employee {
             };
       }
 
-      System.out.println("Please enter employee day of birth: ");
-      bday = scan.nextInt();
+
+        while (bday == 0) {
+            System.out.println("Please enter employee day of birth: ");
+            bday = scan.nextInt();
+            if (bmonth2 == 1 || bmonth2 == 3 || bmonth2 == 5 || bmonth2 == 7 || bmonth2 == 8 || bmonth2 == 10 || bmonth2 == 12){
+                if(bday > 31 || bday < 1){
+                    System.out.println("This is an invalid answer.");
+                    bday = 0;
+                }
+            }
+            if (bmonth2 == 4 || bmonth2 == 6 || bmonth2 == 9 || bmonth2 == 11) {
+                if (bday > 30 || bday < 1) {
+                    System.out.println("This is an invalid answer.");
+                    bday = 0;
+                }
+            }
+            if (bmonth2 == 2) {
+                if (bday > 28 || bday < 1) {
+                    System.out.println("This is an invalid answer.");
+                    bday = 0;
+                }
+            }
+        }
+
 
       do {
           System.out.println("Please enter employee birth year: ");
@@ -281,5 +303,3 @@ public class Employee {
     }
 
 }
-
-
